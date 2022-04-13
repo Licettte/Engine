@@ -14,10 +14,5 @@ import java.util.Map;
 @Data
 public class UserResponse {
     Result result = new Result();
-
-
-
-
-
 }
 
