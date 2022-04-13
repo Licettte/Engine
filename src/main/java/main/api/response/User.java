@@ -2,6 +2,7 @@ package main.api.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import main.model.Posts;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,13 +30,11 @@ public class User {
     private boolean settings;
 
 
-    public void addPost(PostEnum postEnum) {// пользователей много, от каждого может быть несколько постов.
-
-        // т.е для модерации нужна Map, чтобы добавлять туда новые посты....
-
+    public void addPost(PostEnum postEnum, Post post) {
+       List<Post> posts=new ArrayList<>();
         if (postEnum == PostEnum.NEW || postEnum == PostEnum.DECLINED) {
             moderationCount = moderationCount + 1;
-
+            posts.add(post);
 //            Значение moderationCount содержит количество постов необходимых для проверки модераторами.
 //                    Считаются посты имеющие статус NEW и не проверерны модератором.
         }

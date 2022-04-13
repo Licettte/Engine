@@ -11,9 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import lombok.ToString;
 
-@ToString
+import lombok.Data;
+
+@Data
 @Entity
 @Table(name = "post_comments")
 public class PostComments {
@@ -35,51 +36,4 @@ public class PostComments {
   public PostComments() {
   }
 
-  public int getId() {
-    return id;
-  }
-
-  public void setId(int id) {
-    this.id = id;
-  }
-
-  public LocalDateTime getRegTime() {
-    return regTime;
-  }
-
-  public void setRegTime(LocalDateTime regTime) {
-    this.regTime = regTime;
-  }
-
-  public String getText() {
-    return text;
-  }
-
-  public void setText(String text) {
-    this.text = text;
-  }
-
-  public int getParentId() {
-    return parentId;
-  }
-
-  public void setParentId(int parentId) {
-    this.parentId = parentId;
-  }
-
-  public Posts getPost() {
-    return post;
-  }
-
-  public void setPost(Posts post) {
-    this.post = post;
-  }
-
-  public Users getUsers() {
-    return users;
-  }
-
-  public void setUsers(Users users) {
-    this.users = users;
-  }
 }

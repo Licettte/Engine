@@ -17,7 +17,7 @@ public class InitResponse {
     @Value("${blog.email}")
     private String email;
 
-  private String copyright = "Виктория Горячева";
+  private String copyright = "кто-то";
   @Value("${blog.copyrightFrom}")
   private String copyrightFrom = "2005";
 }

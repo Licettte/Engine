@@ -28,6 +28,9 @@ public class ApiAuthController {
     }
 
 
+
+
+
 //    @GetMapping("/auth")
 //    private ResponseEntity<Users> settings() {//оборачивать ответы в спец класс ResponseEntity
 //        return new ResponseEntity<UserResponse>(users.getGlobalSettings(), HttpStatus.BAD_REQUEST); // с помощью него можно менять заголовки возврата

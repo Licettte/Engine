@@ -2,12 +2,15 @@ package main.service;
 
 import main.api.response.PostEnum;
 import main.api.response.UserResponse;
+import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
 
     public UserResponse getGlobalSettings() {
+
+
 
         UserResponse userResponse = new UserResponse();
 
