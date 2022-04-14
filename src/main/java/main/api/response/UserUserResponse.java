@@ -2,15 +2,12 @@ package main.api.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-import main.model.Posts;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Data
-public class User {
+public class UserUserResponse {
 
     @JsonProperty("id")
     private int id;

@@ -1,8 +1,6 @@
 package main.service;
 
-import main.api.response.PostEnum;
 import main.api.response.UserResponse;
-import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,27 +13,27 @@ public class UserService {
         UserResponse userResponse = new UserResponse();
 
 
-        if (!userResponse.getResult().getUser().isModeration()) { //Если пользователь не модератор возращать 0 в moderationCount и false в moderation
+        if (!userResponse.getUserResultResponse().getUserUserResponse().isModeration()) { //Если пользователь не модератор возращать 0 в moderationCount и false в moderation
 
 
-            userResponse.getResult().getUser().setId(576);
-            userResponse.getResult().getUser().setName("Дмитрий Петров");
-            userResponse.getResult().getUser().setPhoto("/avatars/ab/cd/ef/52461.jpg");
-            userResponse.getResult().getUser().setEmail("petrov@petroff.ru");
-            userResponse.getResult().getUser().setModeration(false);//false в moderation
+            userResponse.getUserResultResponse().getUserUserResponse().setId(576);
+            userResponse.getUserResultResponse().getUserUserResponse().setName("Дмитрий Петров");
+            userResponse.getUserResultResponse().getUserUserResponse().setPhoto("/avatars/ab/cd/ef/52461.jpg");
+            userResponse.getUserResultResponse().getUserUserResponse().setEmail("petrov@petroff.ru");
+            userResponse.getUserResultResponse().getUserUserResponse().setModeration(false);//false в moderation
 
 
-            userResponse.getResult().getUser().setModerationCount(0);;//0 в moderationCount
-            userResponse.getResult().getUser().setSettings(true);
+            userResponse.getUserResultResponse().getUserUserResponse().setModerationCount(0);;//0 в moderationCount
+            userResponse.getUserResultResponse().getUserUserResponse().setSettings(true);
         } else {
 
-            userResponse.getResult().getUser().setId(576);
-            userResponse.getResult().getUser().setName("Дмитрий Петров");
-            userResponse.getResult().getUser().setPhoto("/avatars/ab/cd/ef/52461.jpg");
-            userResponse.getResult().getUser().setEmail("petrov@petroff.ru");
-            userResponse.getResult().getUser().setModeration(true);
-            userResponse.getResult().getUser().getModerationCount();
-            userResponse.getResult().getUser().setSettings(true);
+            userResponse.getUserResultResponse().getUserUserResponse().setId(576);
+            userResponse.getUserResultResponse().getUserUserResponse().setName("Дмитрий Петров");
+            userResponse.getUserResultResponse().getUserUserResponse().setPhoto("/avatars/ab/cd/ef/52461.jpg");
+            userResponse.getUserResultResponse().getUserUserResponse().setEmail("petrov@petroff.ru");
+            userResponse.getUserResultResponse().getUserUserResponse().setModeration(true);
+            userResponse.getUserResultResponse().getUserUserResponse().getModerationCount();
+            userResponse.getUserResultResponse().getUserUserResponse().setSettings(true);
         }
 
 
