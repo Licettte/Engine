@@ -1,46 +1,20 @@
 package main.api.response;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Component
 @Data
+
 public class PostResponse {
+    //private final   PostPostResponse post;
+
 
     int count;
-    Map<String, String> post = new HashMap();
+    private List<PostPostResponse> post = new LinkedList<>();
 
-    {
-        post.put("id", null);
-        post.put("timestamp", null);
-        post.put("user", null);
-    }
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("user")
-
-    UserUserResponse user;
-
-
-
-    @JsonProperty("title")
-    public String title;
-    @JsonProperty("announce")
-    public String announce;
-    @JsonProperty("likeCount")
-    public int likeCount;
-    @JsonProperty("dislikeCount")
-    public int dislikeCount;
-    @JsonProperty("commentCount")
-    public int commentCount;
-    @JsonProperty("viewCount")
-    public int viewCount;
 
 }
 

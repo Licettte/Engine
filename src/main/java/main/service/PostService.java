@@ -1,32 +1,46 @@
 package main.service;
 
-import main.api.response.Post;
+import main.api.response.PostPostResponse;
 import main.api.response.PostResponse;
-import main.api.response.UserResponse;
+import main.api.response.PostUserResponse;
 import main.api.response.UserUserResponse;
 import org.springframework.stereotype.Service;
 
 @Service
 public class PostService {
     public PostResponse getGlobalSettings() {
+
+
+        PostPostResponse postPostResponse = new PostPostResponse();
+        PostUserResponse postUserResponse = new PostUserResponse();
+
+
         PostResponse postResponse = new PostResponse();
 
+
         postResponse.setCount(390);
+        postResponse.getPost().add(0, postPostResponse);
 
-        Post post = new Post();
-
-        UserUserResponse userUserResponse = new UserUserResponse();
-        postResponse.setUser(userUserResponse);
+        postPostResponse.setUser(postUserResponse);
+        postPostResponse.getUser().setId(1);
 
 
-        postResponse.getUser().setName("Дмитрий Петров");
+//
+//        postResponse.getPostResponse().setUser(postUserResponse);
+//        postResponse.getPostResponse().getUser().setName("Дмитрий Петров");
+//        postResponse.getPostResponse().getUser().setId(1);
+//
+//        postResponse.getPost().getUser().setName("Дмитрий Петров");
+//
+//        postResponse.getPostPostResponses().add(0, postPostResponse);
 
-        postResponse.setTitle("Заголовок поста");
-        postResponse.setAnnounce("Текст анонса поста без HTML-тэгов");
-        postResponse.setLikeCount(36);
-        postResponse.setDislikeCount(3);
-        postResponse.setCommentCount(15);
-        postResponse.setViewCount(55);
+
+//        postResponse.getPost().setTitle("Заголовок поста");
+//        postResponse.getPost().setAnnounce("Текст анонса поста без HTML-тэгов");
+//        postResponse.getPost().setLikeCount(36);
+//        postResponse.getPost().setDislikeCount(3);
+//        postResponse.getPost().setCommentCount(15);
+//        postResponse.getPost().setViewCount(55);
         return postResponse;
 
     }

@@ -1,12 +1,15 @@
 package main.api.response;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Component
 @Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class UserUserResponse {
 
     @JsonProperty("id")
@@ -27,13 +30,17 @@ public class UserUserResponse {
     private boolean settings;
 
 
-    public void addPost(PostEnum postEnum, Post post) {
-       List<Post> posts=new ArrayList<>();
+
+
+    public void addPost(PostEnum postEnum, PostPostResponse postPostResponse) {
+        List<PostPostResponse> postPostResponses = new ArrayList<>();
         if (postEnum == PostEnum.NEW || postEnum == PostEnum.DECLINED) {
             moderationCount = moderationCount + 1;
-            posts.add(post);
+            postPostResponses.add(postPostResponse);
 //            Значение moderationCount содержит количество постов необходимых для проверки модераторами.
 //                    Считаются посты имеющие статус NEW и не проверерны модератором.
+
+
         }
     }
 }
